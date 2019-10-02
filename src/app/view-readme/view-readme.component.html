@@ -1,0 +1,2 @@
+<p *ngIf="!readmeLoaded">Loading...</p>
+<div markdown [src]="readmeContent" (load)="onLoad($event)" (error)="onError($event)"></div>
