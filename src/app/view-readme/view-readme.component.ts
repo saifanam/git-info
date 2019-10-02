@@ -27,7 +27,7 @@ export class ViewReadmeComponent implements OnInit {
   renderReadme(): void {
     this.userHandle = this.activatedRoute.snapshot.paramMap.get('userHandle');
     this.projectName = this.activatedRoute.snapshot.paramMap.get('projectName');
-    this.readmeContent = 'https://raw.githubusercontent.com/' + this.userHandle + '/' + this.projectName + '/master/README.md';
+    this.readmeContent = `https://raw.githubusercontent.com/${this.userHandle}/${this.projectName}/master/README.md`;
   }
 
   onLoad($event): void {
