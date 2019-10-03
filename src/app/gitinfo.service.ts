@@ -5,8 +5,13 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class GitinfoService {
+  baseUrl: string = 'https://api.github.com';
 
   constructor(
     private http: HttpClient
   ) { }
+
+  loadProjects(userHandle) {
+    return this.http.get(`${this.baseUrl}/users/${userHandle}/repos`);
+  }
 }

@@ -1,3 +1,5 @@
-<p>
-  project-list works!
-</p>
+
+<div class="project-item" *ngFor="let item of projectList" (click)="gotoReadme(item.name);">
+  <p>{{item.name}}</p>
+  <p>{{item.description}}</p>
+</div>

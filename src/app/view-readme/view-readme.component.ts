@@ -7,11 +7,10 @@ import { GitinfoService } from '../gitinfo.service';
   templateUrl: './view-readme.component.html',
   styleUrls: ['./view-readme.component.scss']
 })
+
 export class ViewReadmeComponent implements OnInit {
 
   private readmeLoaded: boolean = false;
-  private userHandle: string;
-  private projectName: string;
   private readmeContent: string;
 
   constructor(
@@ -25,9 +24,9 @@ export class ViewReadmeComponent implements OnInit {
   }
 
   renderReadme(): void {
-    this.userHandle = this.activatedRoute.snapshot.paramMap.get('userHandle');
-    this.projectName = this.activatedRoute.snapshot.paramMap.get('projectName');
-    this.readmeContent = `https://raw.githubusercontent.com/${this.userHandle}/${this.projectName}/master/README.md`;
+    const userHandle = this.activatedRoute.snapshot.paramMap.get('userHandle');
+    const projectName = this.activatedRoute.snapshot.paramMap.get('projectName');
+    this.readmeContent = `https://raw.githubusercontent.com/${userHandle}/${projectName}/master/README.md`;
   }
 
   onLoad($event): void {
