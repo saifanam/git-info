@@ -22,6 +22,7 @@ export class ProjectListComponent implements OnInit {
   loadProjects() {
     this.errorText = '';
     this.userHandle = this.activatedRoute.snapshot.paramMap.get('userHandle');
+    this.gitinfoService.changeInfo('');
     this.gitinfoService.loadProjects(this.userHandle).subscribe((response) => {
       this.projectList = response;
     },

@@ -1,7 +1,10 @@
-<div class="app-header" routerLink="/">
-    <div class="header-items">
+<div class="app-header">
+    <div class="header-item" routerLink="/">
         <i class="fab fa-github-square"></i>
         <span>Git Info</span>
+    </div>
+    <div class="header-item right">
+        <span [hidden]="currentInfo === ''">{{currentInfo}}</span>
     </div>
 </div>
 
