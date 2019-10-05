@@ -11,6 +11,7 @@ export class ProjectListComponent implements OnInit {
 
   private projectList: any;
   private userHandle: string;
+  private errorText: string = '';
 
   constructor(
     private router: Router,
@@ -19,9 +20,13 @@ export class ProjectListComponent implements OnInit {
   ) { }
 
   loadProjects() {
+    this.errorText = '';
     this.userHandle = this.activatedRoute.snapshot.paramMap.get('userHandle');
     this.gitinfoService.loadProjects(this.userHandle).subscribe((response) => {
       this.projectList = response;
+    },
+    (error) => {
+      this.errorText = error.statusText;
     });
   }
 

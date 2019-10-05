@@ -10,7 +10,8 @@ import { GitinfoService } from '../gitinfo.service';
 
 export class ViewReadmeComponent implements OnInit {
 
-  private readmeLoaded: boolean = false;
+  private showLoading: boolean = true;
+  private isError: boolean = false;
   private readmeContent: string;
 
   constructor(
@@ -30,11 +31,12 @@ export class ViewReadmeComponent implements OnInit {
   }
 
   onLoad($event): void {
-    this.readmeLoaded = true;
+    this.showLoading = false;
   }
 
   onError($event): void {
-
+    this.showLoading = false;
+    this.isError = true;
   }
 
 }

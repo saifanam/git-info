@@ -1,5 +1,17 @@
 
-<div class="project-item" *ngFor="let item of projectList" (click)="gotoReadme(item.name);">
-  <p>{{item.name}}</p>
-  <p>{{item.description}}</p>
+<div class="container">
+  <h1 *ngIf="errorText === ''">Projects by {{userHandle}}</h1>
+  <div class="project-item" *ngFor="let item of projectList">    
+    <div>
+        <i class="far fa-hand-point-right"></i>
+    </div>
+    <div class="project-info">
+        <p class="info-head" (click)="gotoReadme(item.name);">{{item.name}}</p>
+        <p>{{item.description}}</p>
+    </div>
+  </div>
+  <div class="error-text" *ngIf="errorText !== ''">
+    <i class="fas fa-bug"></i>
+    <span>{{errorText}}</span>
+  </div>
 </div>

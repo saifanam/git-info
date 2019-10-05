@@ -1,2 +1,9 @@
-<p *ngIf="!readmeLoaded">Loading...</p>
-<div markdown [src]="readmeContent" (load)="onLoad($event)" (error)="onError($event)"></div>
+<div class="container">
+    <p *ngIf="showLoading">Loading...</p>
+    <div markdown [src]="readmeContent" (load)="onLoad($event)" (error)="onError($event)"></div>
+
+    <div class="error-text" *ngIf="isError">
+        <i class="fas fa-bug"></i>
+        <span>Not Found</span>
+    </div>
+</div>

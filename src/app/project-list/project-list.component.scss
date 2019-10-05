@@ -1,0 +1,19 @@
+.project-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+
+    .project-info {
+        margin-left: 10px;
+
+        p {
+            margin: 0.5em 0;
+
+            &.info-head {
+                font-weight: 600;
+                font-size: 1.2em;
+                cursor: pointer;
+            }
+        }
+    }
+}
